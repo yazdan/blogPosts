@@ -1,0 +1,60 @@
+<p>همانطور که <a href="https://hive.ir/%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d9%86%d8%ad%d9%88%d9%87-%d8%a7%d8%b3%d8%aa%d9%81%d8%a7%d8%af%d9%87-%d8%b2%db%8c%d8%b1%d9%85%d8%ae%d8%a7%d8%b2%d9%86-submodule-%d9%87%d8%a7-%d8%af/">قبلا</a>  <a href="https://hive.ir/%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b1%d9%88%d9%86%d8%af%d9%87%d8%a7%db%8c-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-git/">هم</a> در هایو نوشته بودم <a href="https://en.wikipedia.org/wiki/Git_(software)">git</a> امکان به اسم <a href="https://git-scm.com/docs/git-submodule">submodule</a> دارد که امکن ترکیب ماژول‌های نرم‌افزار را به ما می‌دهد. در همان حدود ما در تیم توسعه‌مان از <a href="https://git-scm.com/docs/git-submodule">submodule</a> برای توسعه نسل بعدی نرم‌افزارمان استفاده کردیم. بعد از گذشت حدود ۱۰ ماه از استفاده از این ویژگی <a href="https://en.wikipedia.org/wiki/Git_(software)">git</a> در این نوشته، مشکلات استفاده از <a href="https://git-scm.com/docs/git-submodule">submodule</a> بصورت خلاصه بیان شده و راه‌حل جایگزینی ارائه می‌گردد. مهم‌ترین مشکل استفاده از <a href="https://git-scm.com/docs/git-submodule">submodule</a> ها پیچیدگی روند کار با آن است. تیم برای انجام کارهای معمول خود نیاز به دانش بیشتری دارد. در ابتدا افرادی که درگیر این پروژه جدید بودند به دو نفر از اعضای تیم محدود می‌شد که بخشی از کارشان توسعه این پروژه به عنوان تحقیق و توسعه بود. اما با بالغ شدن پروژه و توسعه آن توسط تمام اعضای تیم مشکلات این روند کاری پیچیده خود را نشان دادند. حال روندی که برای جایگزین کردن پیشنهاد میشود استفاده از <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> هاست.</p>
+
+<p>دستور <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> یک مخزن <a href="https://en.wikipedia.org/wiki/Git_(software)">git</a> را به عنوان یک زیرشاخه به مخزن اصلی اضافه میکند، همچنین کار بعدی آن این است که می‌توان زیر شاخه‌ای را از مخزن بزرگ جدا کرده تا تبدیل به یک مخزن مجزا شود. معمولا در مواردی که چند مخزن (یکی اصلی و مابقی به عنوان ماژول) وجود دارد از این روش استفاده می‌کنند. بدین صورت که یک مخزن اصلی(بزرگ) دارند که همه مخازن ماژول‌ها به عنوان <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> اضافه شده‌اند. روند کار یک برنامه نویس با مخزن اصلی بصورت عادی است و با همان روندهای آشنای <a href="https://en.wikipedia.org/wiki/Git_(software)">git</a>، توسعه را شروع و ادامه می‌دهد. حال در زمان‌هایی می‌توان تغییرات زیر شاخه‌ها را به مخازن مجزایشان توسط افرادی که تجربه‌بیشتری دارند و یا حتی با استفاده از چند script ساده ارسال نمود.</p>
+
+<p>با این توضیحات دیدن یک نمونه عملی هم خالی از لطف نیست. در این مثلا قرار است یک <a href="https://github.com/yazdan/parent">مخزن اصلی</a> وجود داشته باشد که شامل <a href="https://github.com/yazdan/blogPosts">مخزن تمامی پست‌های وبلاگ</a> بنده باشد.</p>
+
+<h2>اضافه کردن یک <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a></h2>
+
+<p>اضافه کردن یک <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> کار راحتی است. کافی است که به خط فرمان رفته و از دستور <code>git subtree add</code> استفاده کنید مثال این دستور به شکل زیر است:</p>
+
+<pre><code class="bash">$ git subtree add --prefix blog https://github.com/yazdan/blogPosts master
+git fetch https://github.com/yazdan/blogPosts master
+warning: no common commits
+remote: Counting objects: 232, done.
+remote: Total 232 (delta 0), reused 0 (delta 0), pack-reused 232
+Receiving objects: 100% (232/232), 145.35 KiB | 36.00 KiB/s, done.
+Resolving deltas: 100% (98/98), done.
+From https://github.com/yazdan/blogPosts
+ * branch            master     -&gt; FETCH_HEAD
+Added dir 'blog'
+</code></pre>
+
+<p>بعد از اجرای درست این دستور شاخه‌ای به نام blog به مخزن اصلی اضافه شده و تمامی سابقه مخزن ماژول نیز به عنوان سابقه مخزن اصلی اضافه می‌شود. در این مرحله نیاز نیست کار دیگری انجام دهید. تمامی ماژول‌ها را به همین منوال اضافه می‌شود.</p>
+
+<h2>کار با مخزنی که <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> دارد</h2>
+
+<p>کار با مخازنی که <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> دارد عینا شبیه مخازن عادی است و هیچ تفاوتی با مخازن عادی ندارد</p>
+
+<h2>بازگرداندن تغییرات به ماژول‌ها</h2>
+
+<p>برای بازگرداندن تغییرات به ماژول‌ها می‌توانید از دستور زیر استفاده کنید</p>
+
+<pre><code class="bash">$ git remote add blogposts-github https://github.com/yazdan/blogPosts
+$ git subtree push --prefix blog blogposts-github master
+git fetch https://github.com/yazdan/blogPosts master
+git push using:  blogposts-github master
+Everything up-to-date
+</code></pre>
+
+<h2>نکات قابل توجه هنگام استفاده از <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a>ها</h2>
+
+<p>همانطور که در مورد تمام ابزارهای تکنولوژیک صدق می‌کنید هریک از این ابزارها علاوه بر حل کردن مشکلاتی، ممکن است پیچیدگی‌هایی را ایجاد کنند. قطعا استفاده از <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> ساده‌تر و آسان‌تر از استفاده از <a href="https://git-scm.com/docs/git-submodule">submodule</a> هاست. ولی به خودی خود مشکلاتی نیز دارد</p>
+
+<ul>
+<li>کل سابقه مخزن ماژول به مخزن مادر اضافه می‌شود. که در صورت وجود سابقه‌های زیاد این عمل باعث سنگین شدن مخزن اصلی می‌شود.</li>
+<li>روند merge کردن و رفع conflict ها پیچیده‌تر حالت عادی است.</li>
+</ul>
+
+
+<p>در مجموع استفاده از <a href="https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt">subtree</a> به استفاده از <a href="https://git-scm.com/docs/git-submodule">submodule</a> بخاطر سادگی بیشتر ارجحیت دارد.</p>
+
+<h2>منابع و خواندن بیشتر</h2>
+
+<p>منابع این متن در زیر آمده است:</p>
+
+<ul>
+<li>این <a href="https://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/">پست وبلاگی</a> که به توضیح تجربه واقعی استفاده پرداخته.</li>
+<li>این <a href="https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec#.so74vboll">مقاله</a> در <a href="https://medium.com/@v/git-subtrees-a-tutorial-6ff568381844#.ikqf1mh7h">مدیوم</a> هم قابل توجه است.</li>
+</ul>
+
