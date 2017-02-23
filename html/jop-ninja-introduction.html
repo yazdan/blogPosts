@@ -1,0 +1,53 @@
+<p>اینم یه تجربه پراکنده دیگه!</p>
+
+<p>خب توی این پست یه ابزار جایگزین برای <a href="https://en.wikipedia.org/wiki/Software_build">build</a> کردن نرم‌افزار‌های c و c++ معرفی کنم به اسم <a href="https://ninja-build.org">ninja</a>. داستان بوجود اومدنش از این قراره که آقای <a href="http://neugierig.org/">اوان مارتین</a> که توی گوگل روی توسعه <a href="https://www.google.com/chrome/">google chrome</a> کار میکرده متوجه میشه روند کامپایل کدهاشون بیش از حد کنده و دست و آستینش رو بالا زدن که یه سیستم سریعتر برای <a href="https://en.wikipedia.org/wiki/Software_build">build</a> بنویسه که حاصل شد <a href="https://ninja-build.org">ninja</a>. پیشنهاد میکنم در اولین گام سیستمتون رو اگه <a href="http://cmake.org">cmake</a> نیست <a href="http://cmake.org">cmake</a> کنید و در گام دوم از <a href="https://ninja-build.org">ninja</a> استفاده کنید</p>
+
+<h2>ویژگی‌های <a href="https://ninja-build.org">ninja</a></h2>
+
+<p>خب ویژگی‌هایی که من بلدم از این قراره</p>
+
+<ul>
+<li>سعی در انجام یک کار بصورت درست</li>
+<li>سعی در خیلی سریع بودن</li>
+<li>حداقل محدودیت روی نحوه کامپیال شدن کد و سپردن اونها به ابزارهای سطح بالاتر مانند <a href="http://cmake.org">cmake</a> و <a href="https://code.google.com/p/gyp">gyp</a></li>
+<li>تشخیص درست وابستگی‌ها</li>
+<li>سرعت بر سادگی ارجحیت دارد</li>
+</ul>
+
+
+<h2>نمونه موردی</h2>
+
+<p>خب همونطور که قبلا هم گفته بودم نحوه کامپایل کدها منتقل شده بود به <a href="http://cmake.org">cmake</a> و تنها کاری که لازم بود من انجام بدم دستورات زیر بود
+<code>
+$ mkdir build
+$ cd build
+$ cmake -GNinja ../
+$ ninja
+</code></p>
+
+<p>برای کدهای ما در یک تست غیر علمی نتیجه‌های حدودی زیر برای ۲ یا ۳ بار اجرا بدست اومد</p>
+
+<table>
+<thead>
+<tr>
+<th>type        </th>
+<th>make</th>
+<th>ninja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clean build </td>
+<td> 60s</td>
+<td> 13s</td>
+</tr>
+<tr>
+<td>rebuild     </td>
+<td> 10s</td>
+<td> 0.3s</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>همین!</p>
