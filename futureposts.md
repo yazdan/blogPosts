@@ -8,4 +8,9 @@
 گیت: آموزش pull request
 آموزش crosstool-ng
 نوشتن در مورد markdown و گزارش و اینا
+نوشتن در مورد static analysis
+نوشتن در مورد jenkins
+نوشتن در مورد gerrit
+نوشتن در مورد cmake
+
 
