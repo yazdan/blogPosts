@@ -18,17 +18,17 @@
 
 ## سیستم meson
 
-http://mesonbuild.com/index.html
+- http://mesonbuild.com/index.html
 
-مقایسه با cmake
+### مقایسه با cmake
 
-http://mesonbuild.com/Simple-comparison.html
-https://musescore.org/en/node/120116
-https://news.ycombinator.com/item?id=10153802
+- http://mesonbuild.com/Simple-comparison.html
+- https://musescore.org/en/node/120116
+- https://news.ycombinator.com/item?id=10153802
 
 استفاده واقعی در پروژه‌های
-systemd
-http://blog.nirbheek.in/2016/05/gstreamer-and-meson-new-hope.html
+- systemd
+- http://blog.nirbheek.in/2016/05/gstreamer-and-meson-new-hope.html
 
 
 # افزایش سرعت cmake
@@ -37,7 +37,7 @@ http://blog.nirbheek.in/2016/05/gstreamer-and-meson-new-hope.html
 
 ## استفاده از ccache
 
-https://ccache.samba.org/
-https://crascit.com/2016/04/09/using-ccache-with-cmake/
-https://www.virag.si/2015/07/use-ccache-with-cmake-for-faster-compilation/
+- https://ccache.samba.org/
+- https://crascit.com/2016/04/09/using-ccache-with-cmake/
+- https://www.virag.si/2015/07/use-ccache-with-cmake-for-faster-compilation/
 
