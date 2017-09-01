@@ -1,0 +1,28 @@
+<p>اینم یه تجربه پراکنده!</p>
+
+<p>توی <a href="http://blog.abyz.ir/1394/08/openwrt-%d8%a7%d9%88%d9%84%db%8c%d9%86-%d8%a8%d8%b1%d8%ae%d9%88%d8%b1%d8%af/">پست</a>  <a href="http://blog.abyz.ir/1394/09/openwrt-%d9%88-%da%a9%d8%a7%d8%b1%d9%87%d8%a7%db%8c-%d8%ac%d8%a7%d9%86%d8%a8%db%8c-%d8%a2%d9%86/">قبل</a> من <a href="https://en.wikipedia.org/wiki/OpenWrt">OpenWrt</a> رو <a href="http://blog.abyz.ir/1396/01/openwrt-%d9%88-%d9%85%d9%88%d8%af%d9%85-lte/">معرفی</a> کردم. بعد از یه مدت متوجه شدم که یه پروژه جدید به نام <a href="https://lede-project.org/">LEDE</a> ایجاد شده که انگار همونه و الان حدود ۲ سال هست که <a href="https://en.wikipedia.org/wiki/OpenWrt">OpenWrt</a> زیاد بروزرسانی نمی‌شه. حالا با توجه به علاقه‌ام به کارهای نزدیک سخت‌افزار و مسائل مرتبط به <a href="https://en.wikipedia.org/wiki/Cross_compiler">cross compile</a> سعی کردم که کل <a href="https://en.wikipedia.org/wiki/OpenWrt">OpenWrt</a> رو کامپایل کنم و سعی کنم یه پکیج جدید بهش اضافه کنم.</p>
+
+<p>البته پکیجی که من دنبالش بودم <a href="https://github.com/ambrop72/badvpn/wiki/Tun2socks">tun2socks</a> بود که پکیجش بصورت غیر رسمی وجود داشت. کاری که من کردم این بود که آدرس‌ها رو عوض کردم و یادگرفتم که چطور میتونم اون رو برای روترم کامپایل کنم. نتیجه کار من رو میتونید توی <a href="https://github.com/yazdan/tun2socks-Openwrt">گیت‌هاب من</a> پیدا کنید</p>
+
+<p>روند کار به ترتیب اینجوریه که:</p>
+
+<ol>
+<li>اول سورس کد رو با گیت از گیت‌هاب میگیرید</li>
+<li>دوم با توجه به راهنمای آنلاین تمام پکیج‌ها رو دانلود میکنید</li>
+<li>پکیج رو اضافه می‌کنید</li>
+<li>با استفاده از <code>make menuconfig</code> نوع معماری سیستم و نوع دستگاه و پکیج‌ها رو انتخاب می‌کنید</li>
+<li>و از ابتدا کامپایلر و کل لینوکس و پکیج رو کامپایل میکنید</li>
+</ol>
+
+
+<p>پینشهاد میکنم که برای شروع اینها بخونید:</p>
+
+<ul>
+<li>شروع به کار برای <a href="https://lede-project.org/docs/guide-developer/quickstart-build-images">کامپایل LEDE</a></li>
+<li>نمونه از <a href="https://github.com/mwarning/lede-examples">یک پکیج</a></li>
+</ul>
+
+
+<p>امیدوارم به دردتون خورده باشه!</p>
+
+<p>همین!</p>

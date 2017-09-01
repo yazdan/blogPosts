@@ -6,6 +6,6 @@
 
 بابت اینکه ویدیو رو مشاهده می‌کنید تشکر می‌کنم. در صورتی که نظری داشتید، با من در میان بگذارید.
 
-[aparat id="oavzF"]
+<div id="15023522937515677"><script type="text/JavaScript" src="https://www.aparat.com/embed/oavzF?data[rnddiv]=15023522937515677&data[responsive]=yes"></script></div>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-bFd8k7eGjE" frameborder="0" allowfullscreen></iframe>
