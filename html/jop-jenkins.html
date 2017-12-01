@@ -1,0 +1,17 @@
+<p>اینم یه تجربه پراکنده دیگه!</p>
+
+<p>خب حدودا سه سال قبل من از جای خالی <a href="https://en.wikipedia.org/wiki/Continuous_integration">continues integration</a> نوشتم. حالا حدود بعد از سه سال میخوام دوباره به موضوع رجوع کنم و درباره <a href="https://en.wikipedia.org/wiki/Jenkins_(software)">jenkins</a> بنویسم</p>
+
+<p>توی این سه سال اتفاقات زیادی افتاده. ما روند build رو با استفاده از <a href="https://en.wikipedia.org/wiki/CMake">cmake</a> بهتر کردیم. یادگرفتیم که چی به چیه. حدودا انتهای سال قبل بود که توی شرکت منابع و علم کافی برای پیاده‌سازی روند ci بوجود اومد و ما شروع کردیم به استفاده از <a href="https://en.wikipedia.org/wiki/Jenkins_(software)">jenkins</a>.</p>
+
+<p>نصب و راه‌اندازی <a href="https://en.wikipedia.org/wiki/Jenkins_(software)">jenkins</a> به نسبت آسون و راحت بود. کاری که <a href="https://en.wikipedia.org/wiki/Jenkins_(software)">jenkins</a> برای ما میکرد این بود که به یه دلیلی(بخونید ماشه) شروع به کامپایل کد میکرد. روند کامپایل هم آسون بود. یعنی اینکه یه سری پروژه معمول رو میشناسه مثل <a href="https://en.wikipedia.org/wiki/CMake">cmake</a>, <a href="https://en.wikipedia.org/wiki/Make_(software)">make</a>, <a href="https://en.wikipedia.org/wiki/Gradle">gradle</a>, <a href="https://en.wikipedia.org/wiki/Apache_Maven">maven</a> داره که کار رو راحت میکنه</p>
+
+<p>ما اول به یه پروژه معمولی که بصورت ساعتی اجرا میشد شروع کردیم فقط نکتش اینه که ما با سخت‌افزارهای مختلف کار میکنیم و این تنها برای یکی از سخت‌افزارهامون کار میکرد. بعدش یه پروژه معمولی دیگه اضافه کردم که با <a href="https://en.wikipedia.org/wiki/Cppcheck">cppcheck</a> کار <a href="https://en.wikipedia.org/wiki/Static_program_analysis">static analysis</a> رو روی کدمون بصورت ساعتی انجام میداد.</p>
+
+<p>در مرحله بعد با استفاده امکانی از <a href="https://jenkins.io/doc/book/pipeline/">jenkins pipeline</a> تمامی سخت‌افزارها رو باهم کامپایل کردیم و <a href="https://en.wikipedia.org/wiki/Cppcheck">cppcheck</a> هم به عنوان یک مرحله از این خط لوله ما انتخاب شد.</p>
+
+<p>در قدم بعدی هم این ماجرا رو به <a href="https://en.wikipedia.org/wiki/Git">git</a> وصل کردیم و به ازای هر کامیت یا هر درخواست بررسی که روی کدمون انجام میدیم شروع به کامپایل میکنه و ما میدونیم که دیگه تغییرمون چیزی رو خراب نمیکنه.</p>
+
+<p>در قدم‌های بعدی میخوایم تست اتوماتیک و تست روی سخت‌افزار رو هم پیاده کنیم که اون داستان‌های خودش رو داره. ما آهسته و پیوسته حرکت کردیم تا به این نقطه رسیدیم. شاید کند بودیم شاید هم خوب عمل کردیم ولی خوبیش اینه که راه روشنی پیش رو داریم.</p>
+
+<p>فعلا همین!</p>
