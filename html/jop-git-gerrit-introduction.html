@@ -1,0 +1,53 @@
+<p>اینم یه تجربه پراکنده دیگه!</p>
+
+<p>خب الان که من فرصت نوشتن بیشتر دارم تصمیم گرفتم یکم در مورد <a href="https://www.gerritcodereview.com/">gerrit</a> بنویسم. توی هر شرکتی معمولا یه چیزی به اسم «چرخه حیات توسعه نرم افزار» وجود داره که آدم‌ها ازش بصورت آگاهانه یا به وسیله اونچیزی که فرهنگ اون تیم یا گروه دیکته میکنه ازش استفاده می‌کنند. که اگه عمری بود بیشتر در موردش می‌نویسم. چرخه حیات کارهایی که ما در شرکت انجام می‌دیم به این شکله که:</p>
+
+<ul>
+<li>کارهای موجود بصورت فردی از لیست کارها انتخاب میشه و انجام میشه</li>
+<li>پس از نهایی شدن کار کدها برای <a href="https://git-scm.com/docs/git-merge">merge</a> در اختیار بقیه قرار می‌گیرن</li>
+<li>پس از تایید توسط <a href="https://jenkins-ci.org/">jenkins</a> و حداقل یکی از افراد تیم بسته به تشخیص بررسی کننده کارها <a href="https://git-scm.com/docs/git-merge">merge</a> میشن</li>
+<li>پس از این مراحل هم که تسترها شروع به بررسی کد می‌کنند.</li>
+</ul>
+
+
+<h1>معرفی <a href="https://www.gerritcodereview.com/">gerrit</a></h1>
+
+<p>حالا پست امروز یه معرفی کوتاه و از ابزاری هست به اسم <a href="https://www.gerritcodereview.com/">gerrit</a> که ما از اون برای <a href="https://git-scm.com/docs/git-merge">merge</a> استفاده می‌کنیم.</p>
+
+<p>روند هم اینه که با امکاناتی که <a href="https://www.gerritcodereview.com/">gerrit</a> در اختیار ما قرار میده، بعد از ارسال کد یک مرج محلی اتفاق میفته و کد توسط ci که همون <a href="https://jenkins-ci.org/">jenkins</a> باشه کنترل و کامپایل میشه. اگه این مرحله درست بود <a href="https://jenkins-ci.org/">jenkins</a> به <a href="https://www.gerritcodereview.com/">gerrit</a> میگه که اگه کسی <a href="https://en.wikipedia.org/wiki/Code_review">review</a> کرده میتونه تغییرات رو <a href="https://git-scm.com/docs/git-merge">merge</a> کنه و گرنه تا عدم موفقیت <a href="https://jenkins-ci.org/">jenkins</a> کسی نمی‌تونه کد رو اشتباهی <a href="https://git-scm.com/docs/git-merge">merge</a> کنه. این تضمین میکنه که دیگه کسی چیز اساسی رو خراب نمی‌کنه. پس از تایید <a href="https://jenkins-ci.org/">jenkins</a> هم افراد میتونن کد رو بررسی و تغییرات رو <a href="https://git-scm.com/docs/git-merge">merge</a> کنن. همچنین <a href="https://www.gerritcodereview.com/">gerrit</a> پلاگین‌هایی داره که کمک میکنه تا ما اون رو به جاهای مختلف مثل <a href="https://www.atlassian.com/software/jira">jira</a> وصل کنیم و از اینکه یه کار آماده‌است و یا یه کار <a href="https://git-scm.com/docs/git-merge">merge</a> شده با خبر بشیم و حتی وضعیت موارد رو تغییر بدیم.</p>
+
+<p>بعد از بررسی روند کا نوبت به پیش فرضهای هست که توی <a href="https://www.gerritcodereview.com/">gerrit</a> وجود داره.</p>
+
+<ol>
+<li>اینکه مدیریت منبع <a href="https://en.wikipedia.org/wiki/Git">git</a> در کنترل <a href="https://www.gerritcodereview.com/">gerrit</a> هست و ازش به عنوان یک <a href="https://en.wikipedia.org/wiki/Git#Git_server">git server</a> استفاده می‌شه. یعنی اگه سرور دیگه‌ای مثل <a href="https://github.com/">github</a> هم وجود داره کپی <a href="https://www.gerritcodereview.com/">gerrit</a> هست نه بالعکس</li>
+<li>اینکه تغییرات هرچقدر هم که زیاد و مداوم باشن در نهایت در قالب یک <a href="https://git-scm.com/docs/git-commit">commit</a> ارسال میشن. ممکنه بگید که خب اگه من خواستم وسط کارم <a href="https://git-scm.com/docs/git-push">push</a> کنم چی؟ جواب اینه که هر کامیت یک تغییر هست و تغییر میتونه draft باشه که یعنی هنوز کامل نشده</li>
+<li>اینکه <a href="https://www.gerritcodereview.com/">gerrit</a> تلاش میکنه که تاریخچه کد خطی بمونه و این در مجموع خوبه. برای خطی نگه داشتن تاریخچه به شدت از <a href="https://git-scm.com/docs/git-rebase">rebase</a> استفاده می‌کنه</li>
+</ol>
+
+
+<p>حالا اگه بخوام بصورت خلاصه مزایا و معایب رو بگم هم اینا به ذهنم میرسه</p>
+
+<h1>مزایا و معایب <a href="https://www.gerritcodereview.com/">gerrit</a></h1>
+
+<p>مزایا:</p>
+
+<ol>
+<li>تاریخچه خطی</li>
+<li>ثبات در عملکرد</li>
+<li>وجود ابزار <a href="https://github.com/openstack-infra/git-review">git review</a> برای ارسال به <a href="https://www.gerritcodereview.com/">gerrit</a> و راحت کردن استفاده از <a href="https://www.gerritcodereview.com/">gerrit</a></li>
+<li>شفافیت روند کاری بررسی کرد</li>
+<li>راحتی <a href="https://en.wikipedia.org/wiki/System_integration">integrate</a> شدن با ابزارهای دیگه مثل <a href="https://www.atlassian.com/software/jira">jira</a> و <a href="https://jenkins-ci.org/">jenkins</a> و <a href="https://about.gitlab.com/">gitlab</a></li>
+</ol>
+
+
+<p>معایب:</p>
+
+<ol>
+<li>مستندات گنگ. خیلی پیدا کردن چیزهای ساده توی <a href="https://www.gerritcodereview.com/">gerrit</a> آسون نیست</li>
+<li>زمان زیادی برای یادگیری استفاده از <a href="https://www.gerritcodereview.com/">gerrit</a> مورد نیاز هست</li>
+</ol>
+
+
+<p>در آخر بگم که بگم که روند کاری که هریک از این ابزارها پیشنهاد میدن یک روند دیکته شده است و ممکن به مذاق شما خوش نیاد پس از هر روشی که به مذاقتون خوش میاد استفاده کنید. ما هم یه مدت از <a href="https://www.gerritcodereview.com/">gerrit</a> استفاده کردیم بعدش از <a href="https://about.gitlab.com/">gitlab</a> و دوباره برگشتیم <a href="https://www.gerritcodereview.com/">gerrit</a> چون به نظرمون <a href="https://www.gerritcodereview.com/">gerrit</a> بهتر بود</p>
+
+<p>همین!</p>
