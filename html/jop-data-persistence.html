@@ -1,0 +1,38 @@
+<p>اینم یه تجربه پراکنده دیگه!</p>
+
+<p>مدتی هست که دوست دارم بنویسم و نمیرسم. حالا بعد از مدتها اشتیاق به نوشتن اونقدر زیاد هست که دارم مینویسم.</p>
+
+<p>هدف از این پست معرفی روندها ذخیره سازی دیتا توی کد هست. بارها میشه که ما دوست داریم یه اطلاعاتی رو ذخیره کنیم و اون رو بعدا بازیابی کنیم. وقتی سطح پایین با این اطلاعات برخورد میشه معمولا مساله عجیبی هستند و بایستی به روش مناسب اونها رو پیاده سازی کرد تا ویژگی‌های زیر رو داشته باشه.</p>
+
+<ol>
+<li>سایز دیتا و فایل متغیر باشه و بشه اون رو اضافه کرد</li>
+<li>فیلدهای دیتا قابل اضافه و کم کردن باشه</li>
+<li>حجم کد لازم برای این کار کم باشه که بشه روی دستگاه‌های سطح پایین مختلف ازش استفاده کرد.</li>
+</ol>
+
+
+<h1>راه حل‌ها</h1>
+
+<p>چیزهایی که من با توجه به جستجوهام پیدا کردن اینها هستن:</p>
+
+<ol>
+<li>پیاده‌سازی از اول: یعنی وابسته به نیازمون یه ساختار قابل افزایش خوب پیاده‌سازی کنیم</li>
+<li>استفاده از فرمت‌های متنی: فرمت‌های متنی که معمولا میشه استفاده کرد <a href="https://en.wikipedia.org/wiki/INI_file">ini</a>, <a href="https://en.wikipedia.org/wiki/XML">xml</a>, <a href="https://en.wikipedia.org/wiki/Comma-separated_values`">cvs</a>, <a href="https://en.wikipedia.org/wiki/JSON">json</a>, <a href="https://en.wikipedia.org/wiki/YAML">yaml</a> هست. ایراد اینها اینه که چون متن هستن حجم زیادی میگیرن و عملا به صرفه نیستن. معمولا میزان پردازش لازم برای parse اونها هم کم نیست.</li>
+<li>استفاده از تکنولوژی های <a href="https://en.wikipedia.org/wiki/Serialization">serialization</a> مثل <a href="https://en.wikipedia.org/wiki/Protocol_Buffers">protocol buffer</a>, <a href="https://en.wikipedia.org/wiki/Apache_Thrift">thrift</a> هست که با استفاده از اونها میتونید یه دیتا رو توصیف کنید و همون دیتا رو بصورت آرایه ذخیره کنید. اونها معمولا از <a href="https://en.wikipedia.org/wiki/Schema_evolution">schema evolution</a> یعنی تغییر ساختار دیتا هم پشتیبانی می‌کنن.</li>
+<li>استفاده از دیتابیس های سبک مانند <a href="https://en.wikipedia.org/wiki/SQLite">sqlite</a></li>
+<li>استفاده از کتابخانه‌های ذخیره سازی <a href="https://en.wikipedia.org/wiki/NoSQL">nosql</a> مثل <a href="https://unqlite.org/">unqlite</a> یا <a href="http://leveldb.org/">level db</a> یا <a href="https://en.wikipedia.org/wiki/Berkeley_DB">berkeley db</a> که هر کدومشون به ما امکان ذخیره سازی دیتای با فرمت نامشخص رو میدن.</li>
+</ol>
+
+
+<h1>انتخاب من</h1>
+
+<p>من در پروژه‌هام از یه ساختار با سایز مشخص، <a href="https://en.wikipedia.org/wiki/INI_file">ini</a> ، <a href="https://en.wikipedia.org/wiki/SQLite">sqlite</a> و <a href="https://unqlite.org/">unqlite</a> استفاده کردم. الان ترجیحم استفاده از با این اولویت هست:</p>
+
+<ol>
+<li>اول <a href="https://en.wikipedia.org/wiki/SQLite">sqlite</a> چون خیلی امکانانت سطح بالایی میده</li>
+<li>استفاده از <a href="https://unqlite.org/">unqlite</a> و یا <a href="https://en.wikipedia.org/wiki/INI_file">ini</a>. البته با <a href="https://en.wikipedia.org/wiki/INI_file">ini</a> ما به مشکلات زیادی خوردیم اما <a href="https://unqlite.org/">unqlite</a> رو هم اونقدر توی فیلد تست نکردم</li>
+<li>تهش پیاده کردن ساختار با سایز مشخص هست که کلی دردسر داره</li>
+</ol>
+
+
+<p>همین</p>

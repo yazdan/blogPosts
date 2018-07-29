@@ -13,7 +13,32 @@
 چیزهایی که من با توجه به جستجوهام پیدا کردن اینها هستن:
 
 1. پیاده‌سازی از اول: یعنی وابسته به نیازمون یه ساختار قابل افزایش خوب پیاده‌سازی کنیم
-2. استفاده از فرمت‌های متنی: فرمت‌های متنی که معمولا میشه استفاده کرد ini, xml, cvs, json, yaml هست. ایراد اینها اینه که چون متن هستن حجم زیادی میگیرن و عملا به صرفه نیستن. معمولا میزان پردازش لازم برای parse اونها هم کم نیست.
-3. استفاده از تکنولوژی های serialization مثل protocol buffer, thrift هست که با استفاده از اونها میتونید یه دیتا رو توصیف کنید و همون دیتا رو بصورت آرایه ذخیره کنید. اونها معمولا از schema evolution یعنی تغییر ساختار دیتا هم پشتیبانی می‌کنن.
-4. استفاده از دیتابیس های سبک مانند sqlite
-5. استفاده از کتابخانه‌های ذخیره سازی nosql مثل unqlite یا level db یا berkeley db که هر کدومشون به ما امکان ذخیره سازی دیتای با فرمت نامشخص رو میدن.
+2. استفاده از فرمت‌های متنی: فرمت‌های متنی که معمولا میشه استفاده کرد [ini], [xml], [cvs], [json], [yaml] هست. ایراد اینها اینه که چون متن هستن حجم زیادی میگیرن و عملا به صرفه نیستن. معمولا میزان پردازش لازم برای parse اونها هم کم نیست.
+3. استفاده از تکنولوژی های [serialization] مثل [protocol buffer], [thrift] هست که با استفاده از اونها میتونید یه دیتا رو توصیف کنید و همون دیتا رو بصورت آرایه ذخیره کنید. اونها معمولا از [schema evolution] یعنی تغییر ساختار دیتا هم پشتیبانی می‌کنن.
+4. استفاده از دیتابیس های سبک مانند [sqlite]
+5. استفاده از کتابخانه‌های ذخیره سازی [nosql] مثل [unqlite] یا [level db] یا [berkeley db] که هر کدومشون به ما امکان ذخیره سازی دیتای با فرمت نامشخص رو میدن.
+
+# انتخاب من
+
+من در پروژه‌هام از یه ساختار با سایز مشخص، [ini] ، [sqlite] و [unqlite] استفاده کردم. الان ترجیحم استفاده از با این اولویت هست:
+
+1. اول [sqlite] چون خیلی امکانانت سطح بالایی میده
+2. استفاده از [unqlite] و یا [ini]. البته با [ini] ما به مشکلات زیادی خوردیم اما [unqlite] رو هم اونقدر توی فیلد تست نکردم
+3. تهش پیاده کردن ساختار با سایز مشخص هست که کلی دردسر داره
+
+همین
+
+[ini]:https://en.wikipedia.org/wiki/INI_file
+[xml]:https://en.wikipedia.org/wiki/XML
+[cvs]:https://en.wikipedia.org/wiki/Comma-separated_values`
+[json]:https://en.wikipedia.org/wiki/JSON
+[yaml]:https://en.wikipedia.org/wiki/YAML
+[serialization]:https://en.wikipedia.org/wiki/Serialization
+[protocol buffer]:https://en.wikipedia.org/wiki/Protocol_Buffers
+[thrift]:https://en.wikipedia.org/wiki/Apache_Thrift
+[schema evolution]:https://en.wikipedia.org/wiki/Schema_evolution
+[sqlite]:https://en.wikipedia.org/wiki/SQLite
+[nosql]:https://en.wikipedia.org/wiki/NoSQL
+[unqlite]:https://unqlite.org/
+[level db]:http://leveldb.org/
+[berkeley db]:https://en.wikipedia.org/wiki/Berkeley_DB
